@@ -5,11 +5,11 @@ const Nightmare = require('nightmare'),
       selector = 'html';
 
 let links = [
-  'https://fir-cms-76f54.firebaseapp.com/',
-  'https://fir-cms-76f54.firebaseapp.com/blog',
-  'https://fir-cms-76f54.firebaseapp.com/products',
-  'https://fir-cms-76f54.firebaseapp.com/search',
-  'https://fir-cms-76f54.firebaseapp.com/cart'];
+  'https://cadeau-78b9b.firebaseapp.com/',
+  'https://cadeau-78b9b.firebaseapp.com/blog',
+  'https://cadeau-78b9b.firebaseapp.com/products',
+  'https://cadeau-78b9b.firebaseapp.com/search',
+  'https://cadeau-78b9b.firebaseapp.com/cart'];
 
 let getLinks = (i) => {
   let nightmareLink = Nightmare({
@@ -29,8 +29,8 @@ let getLinks = (i) => {
       let $ = cheerio.load(content);
       let thelinks = $('a');
       $(thelinks).each((i, link) => {
-        if (links.indexOf('https://fir-cms-76f54.firebaseapp.com' + $(link).attr('href')) === -1) {
-          links.push('https://fir-cms-76f54.firebaseapp.com' + $(link).attr('href'));
+        if (links.indexOf('https://cadeau-78b9b.firebaseapp.com' + $(link).attr('href')) === -1) {
+          links.push('https://cadeau-78b9b.firebaseapp.com' + $(link).attr('href'));
         }
       });
 
@@ -67,7 +67,7 @@ let scrape = () => {
           });
           stream = fs.createWriteStream("./static/index.html");
         } else {
-          let path = './static' + links[x].replace('https://fir-cms-76f54.firebaseapp.com', '');
+          let path = './static' + links[x].replace('https://cadeau-78b9b.firebaseapp.com', '');
           path = path.split('/');
           path = path.slice(0, -1);
           path = path.join('/');
@@ -76,7 +76,7 @@ let scrape = () => {
             if (err) console.error('dir not created ' + path)
             else console.log('dir created ' + path)
           });
-          stream = fs.createWriteStream("./static" + links[x].replace('https://fir-cms-76f54.firebaseapp.com', '') + ".html");
+          stream = fs.createWriteStream("./static" + links[x].replace('https://cadeau-78b9b.firebaseapp.com', '') + ".html");
         }
         stream.once('open', (fd) => {
             stream.write(content);
