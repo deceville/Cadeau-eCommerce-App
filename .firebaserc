@@ -3,14 +3,5 @@
     "default": "cadeau-78b9b",
     "cm": "cadeau-78b9b",
     "cms": "cadeau-78b9b"
-  },
-
-  admins: {
-  -549456446: {
-    {
-      email: 'iamdecebel@gmail.com',
-      role: 'super-admin'
-    }
   }
-}
 }

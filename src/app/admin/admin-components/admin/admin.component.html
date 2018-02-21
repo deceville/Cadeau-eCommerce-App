@@ -1,5 +1,5 @@
 <md-toolbar *ngIf="currentAdmin && currentAdmin.role">
-    <h3>FireCMS</h3>
+    <h3>Cadeau Admin</h3>
     <span class="fill-space"></span>
     <div class="login">
         <img *ngIf="(user | async)?.photoURL" src="{{ (user | async)?.photoURL }}" class="admin-photo" [mdMenuTriggerFor]="adminMenu">
